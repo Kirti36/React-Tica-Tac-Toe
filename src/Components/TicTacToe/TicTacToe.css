@@ -1,0 +1,239 @@
+/* General container styles */
+
+.container {
+    font-family: Verdana;
+    text-align: center;
+    background: linear-gradient(135deg, #000000, #292a2c);
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+
+/* Body reset to remove default scrollbars */
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+
+/* Title styling */
+
+.title {
+    margin: 0;
+    padding: 20px 0;
+    color: rgb(30, 102, 138);
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    text-shadow: 2px 2px 5px #000;
+}
+
+.title span {
+    color: #529;
+    padding-left: 5px;
+    font-weight: bold;
+}
+
+
+/* Player input fields */
+
+.player-inputs {
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.player-inputs input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    width: 200px;
+    background: #343334;
+    color: white;
+    outline: none;
+}
+
+.player-inputs input::placeholder {
+    color: #aaa;
+}
+
+
+/* Start button */
+
+.start-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: #38628f;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.start-button:hover {
+    background-color: #0b2848;
+    transform: scale(1.05);
+}
+
+
+/* Current turn indicator */
+
+.current-turn {
+    margin: 20px;
+    font-size: 1.5rem;
+    padding: 10px;
+    color: #f8f9fa;
+    border-radius: 10px;
+    background: #304357;
+    text-shadow: 1px 1px 3px #000;
+    display: inline-block;
+}
+
+.current-turn span {
+    font-weight: bold;
+    color: #FFF;
+}
+
+
+/* Reset button */
+
+.reset-button {
+    margin-top: 20px;
+    height: 30px;
+    width: 100px;
+    font-size: 1.1rem;
+    color: white;
+    background-color: #59ae6f;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.reset-button:hover {
+    background-color: #0d4e1b;
+    transform: scale(1.05);
+}
+
+
+/* Game board styling */
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    background: #343334;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.boxes {
+    height: 100px;
+    background: rgb(255, 255, 255);
+    border: 1px solid #343334;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.boxes:hover {
+    transform: scale(1.1);
+    background: #343334;
+}
+
+.boxes img {
+    border-radius: 10px;
+}
+
+
+/* Winner popup */
+
+.winner-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    overflow: hidden;
+}
+
+.popup-content {
+    background: rgb(186, 210, 228);
+    padding: 30px 50px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    animation: pop-up 0.3s ease-in-out;
+}
+
+.popup-content h2 {
+    color: #553b80;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 3px #000;
+}
+
+.popup-content p {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.popup-content .reset-button2 {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #1f2562;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.popup-content .reset-button:hover {
+    background-color: #172330;
+    transform: scale(1.05);
+}
+
+
+/* Pop-up animation */
+
+@keyframes pop-up {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
